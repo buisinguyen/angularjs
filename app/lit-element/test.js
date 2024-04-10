@@ -1,11 +1,17 @@
-import { html, render } from 'lit-html';
+// import { LitElement, html } from 'litElement';
+// import { html, LitElement } from 'lit/decorators';
+import { html, LitElement, css } from './../lib/lit-element';
 
-const container = document.querySelector('#container');
 
-const counterUi = (count) =>
-  html` <span class="${count % 2 == 1 ? 'odd' : ''}"> ${count} </span>
-    <button @click=${() => render(counterUi(count + 1), container)}>
-      Increment
-    </button>`;
+// import * as LitElement from '../../node_modules/lit-element/development';
 
-render(counterUi(0), container);
+
+class MyLitElementComponent extends LitElement {
+  render() {
+    return html`
+      <p>Hello from LitElement!</p>
+    `;
+  }
+}
+
+customElements.define('my-lit-element', MyLitElementComponent);

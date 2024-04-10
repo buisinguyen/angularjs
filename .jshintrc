@@ -2,10 +2,10 @@
   "strict": "global",
   "globals": {
     // AngularJS
-    "angular": true,
+    "angular": false,
 
     // AngularJS mocks
-    "module": true,
+    "module": false,
     "inject": true,
 
     // Jasmine
@@ -18,7 +18,7 @@
 
     // Protractor
     "browser": false,
-    "element": true,
+    "element": false,
     "by": false
   }
 }

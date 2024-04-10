@@ -9,8 +9,8 @@
     <div class="col-md-10" ng-if="$ctrl.users && $ctrl.users.length > 0" ng-repeat="user in $ctrl.users">
       <p>User name: <b>{{ user.name }}</b></p>
       <p>User description: <i>{{ user.description }}</i></p>
-      <p>Custom Input: <custom-input ng-model="$ctrl.lastName" /></p>
-      <div id="container"></div>
+      <p>Custom Input: <custom-input ng-prop-value="$ctrl.lastName" /></p>
+      <my-lit-element></my-lit-element>
     </div>
   </div>
 </div>
