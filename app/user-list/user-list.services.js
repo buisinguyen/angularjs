@@ -1,4 +1,4 @@
-export default class userService {
+export default class UserService {
     constructor($http) {
         this._http = $http
     }
@@ -6,6 +6,7 @@ export default class userService {
         return this._http.get('mock/users.json');
     }
 }
-userService.$inject = ['$http'];
+UserService.$inject = ['$http'];
+
 
 

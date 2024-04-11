@@ -6,19 +6,7 @@ usersModule.controller('UsersController', UsersController);
 import UsersConfig from './user-list.config.js';
 usersModule.config(UsersConfig);
 // Services
-import userService from './user-list.services.js'
-usersModule.service('userService', userService);
+import UserService from './user-list.services.js'
+usersModule.service('UserService', UserService);
 
-
-
-// Include our UI-Router config settings    
-// usersModule.config(function($stateProvider) {
-//     var usersState = {
-//       name: 'users',
-//       url: '/users',
-//       templateUrl: 'user-list/user-list.template.html'
-//     }
-  
-//     $stateProvider.state(usersState);
-//   });
 

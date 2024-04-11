@@ -1,21 +1,21 @@
 import UsersController from './../user-list/user-list.controller';
-import userService from './../user-list/user-list.services';
+import UserService from './../user-list/user-list.services';
 
 const $httpMock = {
     get: jest.fn()
 };
 
 describe('UsersController', () => {
-    let $controller, userServiceMock, spyLoadData;
+    let $controller, UserServiceMock, spyLoadData;
 
     beforeEach(() => {
         // Inject necessary AngularJS services
         // angular.mock.inject((_UserServices_) => {
-        //     userServiceMock = _UserServices_;
+        //     UserServiceMock = _UserServices_;
         // });
-        userServiceMock = new userService($httpMock);
-        $controller = new UsersController(userServiceMock);
-        spyLoadData = jest.spyOn(userServiceMock, 'loadData');
+        UserServiceMock = new UserService($httpMock);
+        $controller = new UsersController(UserServiceMock);
+        spyLoadData = jest.spyOn(UserServiceMock, 'loadData');
 
 
     });
@@ -54,7 +54,7 @@ describe('UsersController', () => {
         
         $httpMock.get.mockReturnValue(Promise.resolve({ data: responseData }));
         controller.loadDataUsers();
-        userServiceMock.loadData().then(res => {
+        UserServiceMock.loadData().then(res => {
             expect(res.data).toEqual(responseData);
         })
         expect(spyLoadData).toHaveBeenCalled();
